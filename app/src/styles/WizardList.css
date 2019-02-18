@@ -1,0 +1,21 @@
+.characters {
+  font-size: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 25px;
+}
+
+img {
+  height: 150px;
+  width: 150px;
+}
+
+.character {
+  padding: 20px;
+}
+
+.title {
+  text-align: center;
+  font-size: 36px;
+}
