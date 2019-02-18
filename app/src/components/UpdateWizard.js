@@ -24,7 +24,7 @@ class UpdateWizard extends Component {
 
     return (
       <div>
-        <h3>Update a wizard</h3>
+        <h3>Update a Wizard </h3>
         <div className="flex flex-column mt3">
           <input
             value={name}
