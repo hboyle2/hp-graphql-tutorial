@@ -23,7 +23,7 @@ const typeDefs = `
     length: Int
   }
   type Mutation {
-    createWizard(name: String,  image: String , species: String): Characters!
+    createWizard(name: String,  image: String ): Characters!
     updateWizard(name: String, species: String, image: String): Characters!
   }
 
@@ -41,7 +41,6 @@ const resolvers = {
       console.log(args);
       const link = {
         name: args.name,
-        species: args.species,
         image: args.image
       };
       list.push(link);

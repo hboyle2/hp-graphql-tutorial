@@ -3,8 +3,9 @@ import Wizard from "./Wizard";
 import { Query } from "react-apollo";
 import gql from "graphql-tag";
 import "../styles/WizardList.css";
+import { Link } from "react-router-dom";
 
-const WIZARD_QUERY = gql`
+export const WIZARD_QUERY = gql`
   {
     Wizards {
       name
@@ -16,24 +17,38 @@ const WIZARD_QUERY = gql`
 `;
 
 class WizardList extends Component {
+  _updateCacheAfterVote = (store, createVote, linkId) => {
+    const data = store.readQuery({ query: WIZARD_QUERY });
+
+    const votedLink = data.feed.links.find(link => link.id === linkId);
+    votedLink.votes = createVote.link.votes;
+
+    store.writeQuery({ query: WIZARD_QUERY, data });
+  };
   render() {
     return (
-      <Query query={WIZARD_QUERY}>
-        {({ loading, error, data }) => {
-          if (loading) return <div>Fetching</div>;
-          if (error) return <div>Error</div>;
+      <div className="wrapper">
+        <h2>Harry Potter and the Graphql Tutorial</h2>
+        <Link to="/create-wizard">Create Wizard</Link>
+        <Link to="/update-wizard">Update Wizard</Link>
 
-          const linksToRender = data.Wizards;
+        <Query query={WIZARD_QUERY}>
+          {({ loading, error, data }) => {
+            if (loading) return <div>Fetching</div>;
+            if (error) return <div>Error</div>;
 
-          return (
-            <div className="characters">
-              {linksToRender.map(link => (
-                <Wizard key={link.name} link={link} />
-              ))}
-            </div>
-          );
-        }}
-      </Query>
+            const linksToRender = data.Wizards;
+
+            return (
+              <div className="characters">
+                {linksToRender.map(link => (
+                  <Wizard key={link.name} link={link} />
+                ))}
+              </div>
+            );
+          }}
+        </Query>
+      </div>
     );
   }
 }

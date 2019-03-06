@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import { Mutation } from "react-apollo";
 import gql from "graphql-tag";
+import { Link } from "react-router-dom";
+import { WIZARD_QUERY } from "./WizardList";
 
 const CREATE_WIZARD = gql`
-  mutation createWizard($name: String, $image: String, $species: String) {
-    createWizard(name: $name, image: $image, species: $species) {
+  mutation createWizard($name: String, $image: String) {
+    createWizard(name: $name, image: $image) {
       name
       image
-      species
     }
   }
 `;
@@ -15,15 +16,15 @@ const CREATE_WIZARD = gql`
 class CreateWizard extends Component {
   state = {
     name: "",
-    image: "",
-    species: ""
+    image: ""
   };
 
   render() {
-    const { name, image, species } = this.state;
+    const { name, image } = this.state;
 
     return (
       <div>
+        <Link to="/">Home</Link>
         <h1> Create a Wizard</h1>
         <div className="flex flex-column mt3">
           <input
@@ -38,14 +39,21 @@ class CreateWizard extends Component {
             type="text"
             placeholder="The URL for the link"
           />
-          <input
-            value={species}
-            onChange={e => this.setState({ species: e.target.value })}
-            type="text"
-            placeholder="The Species "
-          />
         </div>
-        <Mutation mutation={CREATE_WIZARD} variables={{ name, image, species }}>
+        <Mutation
+          mutation={CREATE_WIZARD}
+          variables={{ name, image }}
+          onCompleted={() => this.props.history.push("/")}
+          update={(store, { data: { createWizard } }) => {
+            const data = store.readQuery({ query: WIZARD_QUERY });
+            console.log(data);
+            data.Wizards.push(createWizard);
+            store.writeQuery({
+              query: WIZARD_QUERY,
+              data
+            });
+          }}
+        >
           {(createWizard, { data, loading, error }) => (
             <button onClick={createWizard}>submit</button>
           )}
