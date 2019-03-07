@@ -3,8 +3,14 @@ import { Mutation } from "react-apollo";
 import gql from "graphql-tag";
 
 const UPDATE_WIZARD = gql`
-  mutation updateWizard($name: String, $image: String, $species: String) {
-    updateWizard(name: $name, image: $image, species: $species) {
+  mutation updateWizard(
+    $id: String
+    $name: String
+    $image: String
+    $species: String
+  ) {
+    updateWizard(id: $id, name: $name, image: $image, species: $species) {
+      id
       name
       image
       species
@@ -16,15 +22,21 @@ class UpdateWizard extends Component {
   state = {
     name: "",
     image: "",
-    species: ""
+    id: 0
   };
 
   render() {
-    const { name, image, species } = this.state;
+    const { name, image, id } = this.state;
 
     return (
       <div>
         <h3>Update a Wizard </h3>
+        <input
+          value={id}
+          onChange={e => this.setState({ id: e.target.value })}
+          type="text"
+          placeholder="ID "
+        />
         <div className="flex flex-column mt3">
           <input
             value={name}
@@ -38,14 +50,8 @@ class UpdateWizard extends Component {
             type="text"
             placeholder="The URL for the link"
           />
-          <input
-            value={species}
-            onChange={e => this.setState({ species: e.target.value })}
-            type="text"
-            placeholder="The Species "
-          />
         </div>
-        <Mutation mutation={UPDATE_WIZARD} variables={{ name, image, species }}>
+        <Mutation mutation={UPDATE_WIZARD} variables={{ id, name, image }}>
           {(updateWizard, { data, loading, error }) => (
             <button onClick={updateWizard}>submit</button>
           )}

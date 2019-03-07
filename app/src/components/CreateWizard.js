@@ -46,7 +46,6 @@ class CreateWizard extends Component {
           onCompleted={() => this.props.history.push("/")}
           update={(store, { data: { createWizard } }) => {
             const data = store.readQuery({ query: WIZARD_QUERY });
-            console.log(data);
             data.Wizards.push(createWizard);
             store.writeQuery({
               query: WIZARD_QUERY,

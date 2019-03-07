@@ -1,6 +1,7 @@
 module.exports = {
   WizardList: [
     {
+      id: 1,
       name: "Harry Potter",
       species: "human",
       gender: "male",
@@ -19,6 +20,7 @@ module.exports = {
       image: "http://hp-api.herokuapp.com/images/harry.jpg"
     },
     {
+      id: 2,
       name: "Hermione Granger",
       species: "human",
       gender: "female",
@@ -37,6 +39,7 @@ module.exports = {
       image: "http://hp-api.herokuapp.com/images/hermione.jpeg"
     },
     {
+      id: 3,
       name: "Ron Weasley",
       species: "human",
       gender: "male",
@@ -55,6 +58,7 @@ module.exports = {
       image: "http://hp-api.herokuapp.com/images/ron.jpg"
     },
     {
+      id: 4,
       name: "Draco Malfoy",
       species: "human",
       gender: "male",
@@ -73,6 +77,7 @@ module.exports = {
       image: "http://hp-api.herokuapp.com/images/draco.jpg"
     },
     {
+      id: 5,
       name: "Minerva McGonagall",
       species: "human",
       gender: "female",
@@ -91,6 +96,7 @@ module.exports = {
       image: "http://hp-api.herokuapp.com/images/mcgonagall.jpg"
     },
     {
+      id: 6,
       name: "Cedric Diggory",
       species: "human",
       gender: "male",
@@ -109,6 +115,7 @@ module.exports = {
       image: "http://hp-api.herokuapp.com/images/cedric.png"
     },
     {
+      id: 7,
       name: "Cho Chang",
       species: "human",
       gender: "female",
@@ -127,6 +134,7 @@ module.exports = {
       image: "http://hp-api.herokuapp.com/images/cho.jpg"
     },
     {
+      id: 8,
       name: "Severus Snape",
       species: "human",
       gender: "male",
@@ -145,6 +153,7 @@ module.exports = {
       image: "http://hp-api.herokuapp.com/images/snape.jpg"
     },
     {
+      id: 9,
       name: "Rubeus Hagrid",
       species: "half-giant",
       gender: "male",
@@ -163,6 +172,7 @@ module.exports = {
       image: "http://hp-api.herokuapp.com/images/hagrid.png"
     },
     {
+      id: 10,
       name: "Neville Longbottom",
       species: "human",
       gender: "male",
@@ -181,6 +191,7 @@ module.exports = {
       image: "http://hp-api.herokuapp.com/images/neville.jpg"
     },
     {
+      id: 11,
       name: "Luna Lovegood",
       species: "human",
       gender: "female",
@@ -199,6 +210,7 @@ module.exports = {
       image: "http://hp-api.herokuapp.com/images/luna.jpg"
     },
     {
+      id: 12,
       name: "Ginny Weasley",
       species: "human",
       gender: "female",
@@ -217,6 +229,7 @@ module.exports = {
       image: "http://hp-api.herokuapp.com/images/ginny.jpg"
     },
     {
+      id: 13,
       name: "Sirius Black",
       species: "human",
       gender: "male",
@@ -235,6 +248,7 @@ module.exports = {
       image: "http://hp-api.herokuapp.com/images/sirius.JPG"
     },
     {
+      id: 14,
       name: "Remus Lupin",
       species: "werewolf",
       gender: "male",
@@ -253,6 +267,7 @@ module.exports = {
       image: "http://hp-api.herokuapp.com/images/lupin.jpg"
     },
     {
+      id: 15,
       name: "Arthur Weasley",
       species: "human",
       gender: "male",
@@ -271,6 +286,7 @@ module.exports = {
       image: "http://hp-api.herokuapp.com/images/arthur.jpg"
     },
     {
+      id: 16,
       name: "Bellatrix Lestrange",
       species: "human",
       gender: "female",
@@ -289,6 +305,7 @@ module.exports = {
       image: "http://hp-api.herokuapp.com/images/bellatrix.jpg"
     },
     {
+      id: 17,
       name: "Lord Voldemort",
       species: "human",
       gender: "male",
@@ -307,6 +324,7 @@ module.exports = {
       image: "http://hp-api.herokuapp.com/images/voldemort.jpg"
     },
     {
+      id: 18,
       name: "Horace Slughorn",
       species: "human",
       gender: "male",
@@ -325,6 +343,7 @@ module.exports = {
       image: "http://hp-api.herokuapp.com/images/slughorn.JPG"
     },
     {
+      id: 19,
       name: "Kingsley Shacklebolt",
       species: "human",
       gender: "male",
@@ -343,6 +362,7 @@ module.exports = {
       image: "http://hp-api.herokuapp.com/images/kingsley.jpg"
     },
     {
+      id: 20,
       name: "Dolores Umbridge",
       species: "human",
       gender: "female",
@@ -361,6 +381,7 @@ module.exports = {
       image: "http://hp-api.herokuapp.com/images/umbridge.jpg"
     },
     {
+      id: 21,
       name: "Lucius Malfoy",
       species: "human",
       gender: "male",
@@ -379,6 +400,7 @@ module.exports = {
       image: "http://hp-api.herokuapp.com/images/lucius.jpg"
     },
     {
+      id: 22,
       name: "Vincent Crabbe",
       species: "human",
       gender: "male",
@@ -397,6 +419,7 @@ module.exports = {
       image: "http://hp-api.herokuapp.com/images/crabbe.jpg"
     },
     {
+      id: 23,
       name: "Gregory Goyle",
       species: "human",
       gender: "male",
@@ -415,6 +438,7 @@ module.exports = {
       image: "http://hp-api.herokuapp.com/images/goyle.jpg"
     },
     {
+      id: 24,
       name: "Mrs Norris",
       species: "cat",
       gender: "female",
@@ -433,6 +457,7 @@ module.exports = {
       image: "http://hp-api.herokuapp.com/images/norris.JPG"
     },
     {
+      id: 25,
       name: "Argus Filch",
       species: "human",
       gender: "male",

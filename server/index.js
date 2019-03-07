@@ -8,9 +8,9 @@ const typeDefs = `
   }
 
   type Characters {
-
-    name: String
-    house : String
+   id: String
+   name: String
+   house : String
    wand : Wand
    ancestry: String
    image: String
@@ -24,12 +24,13 @@ const typeDefs = `
   }
   type Mutation {
     createWizard(name: String,  image: String ): Characters!
-    updateWizard(name: String, species: String, image: String): Characters!
+    updateWizard(id: String, name: String, species: String, image: String): Characters!
   }
 
 
 `;
 
+let idCount = list.length + 1;
 const resolvers = {
   Query: {
     Wizards: () => {
@@ -38,8 +39,8 @@ const resolvers = {
   },
   Mutation: {
     createWizard: (parent, args) => {
-      console.log(args);
       const link = {
+        id: idCount++,
         name: args.name,
         image: args.image
       };
@@ -47,10 +48,8 @@ const resolvers = {
       return link;
     },
     updateWizard: (parent, args) => {
-      const name = args.name;
-
       list.map(character => {
-        if (character.name == name) {
+        if (character.id == args.id) {
           character.species = args.species;
           character.image = args.image;
         }
